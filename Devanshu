@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Nandini ❤️</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  overflow: hidden;
+}
+
+#surprise {
+  display: none;
+  padding: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff4d6d;
+  cursor: pointer;
+  margin-top: 200px;
+}
+
+h1 {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px white; }
+  to { text-shadow: 0 0 20px yellow; }
+}
+
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh); }
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="openSurprise()">Tap to Open 🎁</button>
+
+<div id="surprise">
+  <h1>Happy Birthday Nandini ❤️</h1>
+  <p>
+  Tu meri life ka sabse special part hai.  
+  Chahe beech me sab khatam ho gaya ho,  
+  mera pyaar aur respect tere liye hamesha rahega.  
+  I really miss you... ❤️  
+  </p>
+  <h2>5 Years of Beautiful Memories ✨</h2>
+</div>
+
+<script>
+function openSurprise() {
+  document.querySelector("button").style.display = "none";
+  document.getElementById("surprise").style.display = "block";
+
+  // Hearts animation
+  setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 5000);
+  }, 300);
+}
+</script>
+
+</body>
+</html>
